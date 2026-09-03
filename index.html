@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Undangan Pernikahan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f7eeee;
+  color:#604f50;
+  font-family:'Montserrat',sans-serif;
+  line-height:1.7;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  background:#fffafa;
+  overflow:hidden;
+}
+
+section{
+  padding:70px 25px;
+  text-align:center;
+}
+
+.small{
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+h1,h2,h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+}
+
+h2{
+  font-size:42px;
+  color:#745b5d;
+  margin:12px 0 20px;
+}
+
+p{
+  font-size:13px;
+}
+
+.divider{
+  width:45px;
+  height:1px;
+  background:#c9a8aa;
+  margin:20px auto;
+}
+
+/* COVER */
+.cover{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  background:
+    linear-gradient(rgba(255,250,250,.75),rgba(255,250,250,.82)),
+    url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80')
+    center/cover;
+}
+
+.cover-box{
+  width:100%;
+  padding:55px 25px;
+  border:1px solid rgba(120,90,90,.25);
+  background:rgba(255,250,250,.85);
+}
+
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  letter-spacing:5px;
+  color:#8a676a;
+}
+
+.cover h1{
+  font-size:58px;
+  line-height:.9;
+  margin:25px 0;
+  color:#6f5658;
+}
+
+.cover-date{
+  margin-top:25px;
+  font-size:12px;
+  letter-spacing:3px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:13px 25px;
+  border:1px solid #b99498;
+  color:#765c5e;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  background:#fffafa;
+  cursor:pointer;
+}
+
+/* OPENING */
+.opening{
+  background:#fffafa;
+}
+
+.opening h3{
+  font-size:30px;
+  margin:20px 0;
+}
+
+.quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;
+  font-style:italic;
+  line-height:1.6;
+}
+
+/* COUPLE */
+.couple{
+  background:#f8eeee;
+}
+
+.couple-card{
+  margin:30px 0;
+}
+
+.couple-photo{
+  width:190px;
+  height:240px;
+  object-fit:cover;
+  border-radius:100px 100px 10px 10px;
+  margin-bottom:18px;
+}
+
+.couple-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:35px;
+  color:#73585b;
+}
+
+.and{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  margin:15px;
+  color:#b28b90;
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:25px;
+}
+
+.time-box{
+  width:70px;
+  padding:12px 5px;
+  background:#f5e7e8;
+}
+
+.time-box strong{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  font-weight:500;
+}
+
+.time-box span{
+  font-size:8px;
+  letter-spacing:1px;
+}
+
+/* EVENT */
+.event{
+  border:1px solid #ead6d8;
+  padding:25px 15px;
+  margin:15px 0;
+}
+
+.event h3{
+  font-size:28px;
+}
+
+.event-date{
+  font-size:13px;
+  margin:8px 0;
+}
+
+.event-time{
+  font-size:12px;
+}
+
+/* STORY */
+.story{
+  background:#f8eeee;
+}
+
+.story-box{
+  border-left:1px solid #c9a8aa;
+  text-align:left;
+  padding-left:20px;
+  margin:25px 0;
+}
+
+.story-box h3{
+  font-size:28px;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:25px;
+}
+
+.gallery img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+
+/* RSVP */
+.form-box{
+  margin-top:25px;
+}
+
+.form-box input,
+.form-box textarea{
+  width:100%;
+  padding:13px;
+  margin-bottom:10px;
+  border:1px solid #ead6d8;
+  background:#fff;
+  font-family:'Montserrat',sans-serif;
+}
+
+.form-box textarea{
+  height:100px;
+  resize:none;
+}
+
+/* GIFT */
+.gift-box{
+  background:#f8eeee;
+  padding:30px 20px;
+  margin-top:25px;
+}
+
+.account{
+  margin:20px 0;
+  padding:15px;
+  background:#fffafa;
+}
+
+.account-number{
+  font-size:20px;
+  letter-spacing:2px;
+  margin:8px 0;
+}
+
+/* CLOSING */
+.closing{
+  min-height:500px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(255,250,250,.78),rgba(255,250,250,.85)),
+    url('https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=1000&q=80')
+    center/cover;
+}
+
+.closing h2{
+  font-size:50px;
+}
+
+.music{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  border:1px solid #c9a8aa;
+  background:#fffafa;
+  color:#795d60;
+  z-index:99;
+  cursor:pointer;
+}
+
+.footer{
+  padding:25px;
+  text-align:center;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#a48789;
+}
+
+@media(max-width:400px){
+  .cover h1{
+    font-size:48px;
+  }
+
+  h2{
+    font-size:37px;
+  }
+
+  .time-box{
+    width:60px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- COVER -->
+<section class="cover" id="home">
+  <div class="cover-box">
+
+    <div class="logo">LOVEPEDIA</div>
+
+    <div class="small">The Wedding Of</div>
+
+    <h1>Nisa<br>&<br>Andika</h1>
+
+    <div class="cover-date">
+      20 • 12 • 2026
+    </div>
+
+    <a href="#opening" class="btn">
+      Buka Undangan
+    </a>
+
+  </div>
+</section>
+
+
+<!-- OPENING -->
+<section class="opening" id="opening">
+
+  <div class="small">Assalamu'alaikum Warahmatullahi Wabarakatuh</div>
+
+  <h3>Dengan penuh kebahagiaan</h3>
+
+  <div class="divider"></div>
+
+  <p>
+    Dengan memohon rahmat dan ridho Allah SWT,
+    kami bermaksud mengundang Bapak/Ibu/Saudara/i
+    untuk hadir di acara pernikahan kami.
+  </p>
+
+  <br>
+
+  <div class="quote">
+    “Dan di antara tanda-tanda kekuasaan-Nya ialah
+    Dia menciptakan untukmu pasangan hidup...”
+  </div>
+
+  <p style="margin-top:10px;">
+    QS. Ar-Rum : 21
+  </p>
+
+</section>
+
+
+<!-- COUPLE -->
+<section class="couple">
+
+  <div class="small">Mempelai</div>
+
+  <h2>Our Beloved</h2>
+
+  <div class="couple-card">
+
+    <img
+      class="couple-photo"
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+      alt="Mempelai Wanita"
+    >
+
+    <div class="couple-name">
+      Nisa Aulia
+    </div>
+
+    <p>
+      Putri dari<br>
+      Bapak Nama Ayah & Ibu Nama Ibu
+    </p>
+
+  </div>
+
+  <div class="and">&</div>
+
+  <div class="couple-card">
+
+    <img
+      class="couple-photo"
+      src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=600&q=80"
+      alt="Mempelai Pria"
+    >
+
+    <div class="couple-name">
+      Andika Pratama
+    </div>
+
+    <p>
+      Putra dari<br>
+      Bapak Nama Ayah & Ibu Nama Ibu
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+<section>
+
+  <div class="small">Menuju Hari Bahagia</div>
+
+  <h2>Save The Date</h2>
+
+  <div class="countdown">
+
+    <div class="time-box">
+      <strong id="days">0</strong>
+      <span>HARI</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="hours">0</strong>
+      <span>JAM</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="minutes">0</strong>
+      <span>MENIT</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="seconds">0</strong>
+      <span>DETIK</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EVENT -->
+<section class="couple">
+
+  <div class="small">Save The Date</div>
+
+  <h2>Our Event</h2>
+
+  <div class="event">
+
+    <div class="small">Akad Nikah</div>
+
+    <h3>Akad</h3>
+
+    <div class="event-date">
+      Minggu, 20 Desember 2026
+    </div>
+
+    <div class="event-time">
+      08.00 WIB - selesai
+    </div>
+
+    <p style="margin-top:15px;">
+      Kediaman Mempelai Wanita
+    </p>
+
+  </div>
+
+  <div class="event">
+
+    <div class="small">Resepsi</div>
+
+    <h3>Wedding Reception</h3>
+
+    <div class="event-date">
+      Minggu, 20 Desember 2026
+    </div>
+
+    <div class="event-time">
+      11.00 WIB - 14.00 WIB
+    </div>
+
+    <p style="margin-top:15px;">
+      Gedung Pernikahan
+    </p>
+
+  </div>
+
+  <a
+    class="btn"
+    href="https://maps.google.com"
+    target="_blank"
+  >
+    Lihat Lokasi
+  </a>
+
+</section>
+
+
+<!-- STORY -->
+<section class="story">
+
+  <div class="small">Our Journey</div>
+
+  <h2>Love Story</h2>
+
+  <div class="story-box">
+
+    <h3>Awal Bertemu</h3>
+
+    <p>
+      Semua berawal dari sebuah pertemuan
+      sederhana yang ternyata menjadi awal
+      dari perjalanan panjang kami.
+    </p>
+
+  </div>
+
+  <div class="story-box">
+
+    <h3>Menjalani Bersama</h3>
+
+    <p>
+      Hari demi hari kami lalui bersama,
+      belajar memahami dan saling mendukung
+      dalam setiap keadaan.
+    </p>
+
+  </div>
+
+  <div class="story-box">
+
+    <h3>Menuju Selamanya</h3>
+
+    <p>
+      Hingga akhirnya kami memutuskan untuk
+      melangkah bersama menuju sebuah kehidupan
+      baru sebagai keluarga.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section>
+
+  <div class="small">Captured Moments</div>
+
+  <h2>Our Gallery</h2>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80">
+
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80">
+
+    <img src="https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=600&q=80">
+
+    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80">
+
+  </div>
+
+</section>
+
+
+<!-- RSVP -->
+<section class="couple">
+
+  <div class="small">Confirmation</div>
+
+  <h2>RSVP</h2>
+
+  <p>
+    Mohon konfirmasi kehadiran Anda
+    melalui tombol berikut.
+  </p>
+
+  <a
+    class="btn"
+    href="https://forms.google.com"
+    target="_blank"
+  >
+    Konfirmasi Kehadiran
+  </a>
+
+</section>
+
+
+<!-- GIFT -->
+<section>
+
+  <div class="small">Wedding Gift</div>
+
+  <h2>Amplop Digital</h2>
+
+  <p>
+    Doa dan kehadiran Anda merupakan
+    hadiah terindah bagi kami.
+  </p>
+
+  <div class="gift-box">
+
+    <div class="account">
+
+      <div class="small">
+        Bank BCA
+      </div>
+
+      <div class="account-number">
+        1234567890
+      </div>
+
+      <p>
+        a.n. Nisa Aulia
+      </p>
+
+      <button
+        class="btn"
+        onclick="copyNumber('1234567890')"
+      >
+        Salin Nomor
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CLOSING -->
+<section class="closing">
+
+  <div>
+
+    <div class="small">
+      Thank You
+    </div>
+
+    <h2>Nisa & Andika</h2>
+
+    <div class="divider"></div>
+
+    <p>
+      Merupakan suatu kehormatan dan kebahagiaan
+      bagi kami apabila Bapak/Ibu/Saudara/i
+      berkenan hadir dan memberikan doa restu.
+    </p>
+
+    <br>
+
+    <div class="logo">
+      LOVEPEDIA
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="footer">
+  © 2026 LOVEPEDIA
+</div>
+
+</div>
+
+
+<!-- MUSIC -->
+<button class="music" onclick="toggleMusic()" id="musicButton">
+  ♫
+</button>
+
+<audio id="music">
+  <source
+    src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b9f3e21.mp3"
+    type="audio/mpeg"
+  >
+</audio>
+
+
+<script>
+
+/* COUNTDOWN */
+
+const weddingDate =
+new Date("2026-12-20T08:00:00+07:00").getTime();
+
+function updateCountdown(){
+
+  const now = new Date().getTime();
+
+  const distance = weddingDate - now;
+
+  if(distance < 0){
+    document.getElementById("days").innerHTML = "0";
+    document.getElementById("hours").innerHTML = "0";
+    document.getElementById("minutes").innerHTML = "0";
+    document.getElementById("seconds").innerHTML = "0";
+    return;
+  }
+
+  const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours =
+    Math.floor(
+      (distance % (1000 * 60 * 60 * 24))
+      / (1000 * 60 * 60)
+    );
+
+  const minutes =
+    Math.floor(
+      (distance % (1000 * 60 * 60))
+      / (1000 * 60)
+    );
+
+  const seconds =
+    Math.floor(
+      (distance % (1000 * 60))
+      / 1000
+    );
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+
+/* COPY NOMOR */
+
+function copyNumber(number){
+
+  navigator.clipboard.writeText(number)
+  .then(function(){
+    alert("Nomor rekening berhasil disalin 💗");
+  })
+  .catch(function(){
+    alert("Nomor rekening: " + number);
+  });
+
+}
+
+
+/* MUSIC */
+
+const music =
+document.getElementById("music");
+
+let playing = false;
+
+function toggleMusic(){
+
+  if(playing){
+
+    music.pause();
+
+    document.getElementById("musicButton").innerHTML = "♫";
+
+    playing = false;
+
+  }else{
+
+    music.play();
+
+    document.getElementById("musicButton").innerHTML = "❚❚";
+
+    playing = true;
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
